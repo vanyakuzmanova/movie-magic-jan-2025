@@ -7,7 +7,7 @@ export default [
         imageUrl: '/static/img/jungle-cruise.jpeg',
         director: 'Jaume Calllet-Serra',
         year: 2021,
-        ratng: 6.6,
+        rating: 6.6,
         category: 'Movie',
     },
     {
@@ -18,7 +18,7 @@ export default [
         imageUrl: '/static/img/the-little-mermaid.jpg',
         director: 'Zack Snyder',
         year: 2013,
-        ratng: 7.1,
+        rating: 7.1,
         category: 'Movie',
     },
 
