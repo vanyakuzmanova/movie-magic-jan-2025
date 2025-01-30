@@ -3,7 +3,11 @@ import movieService from '../services/movie-service.js';
 
 const movieController = Router();
 
-//import { movieController } from "../services/movie-service.js"
+movieController.get('/search', (req,res) =>{
+    const movies = movieService.getAll();
+    
+    res.render('search', { movies });
+})
 
 movieController.get('/create', (req,res) => {
     res.render('create');
