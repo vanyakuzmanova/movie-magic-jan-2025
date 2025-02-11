@@ -21,5 +21,16 @@ export default [
         rating: 7.1,
         category: 'Movie',
     },
+    {
+        id: "3",
+        title: "Avengers: Endgame",
+        genre: "Super hero",
+        description: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos",
+        imageUrl: "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008/?ref_=tt_ov_i",
+        director: "Antony Russo",
+        year: 2019,
+        rating: 8.4,
+        category: "movie"
+    }
 
 ];

@@ -26,7 +26,7 @@ app.use(express.urlencoded({extended: false})); //Learn express to parse data
 
 //db configuration
 try{
-    const uri = 'mongodb://localhost://21017/magic-movies-jan2025'
+    const uri = 'mongodb://localhost:27017/magic-movies-jan2025'
     await mongoose.connect(uri);
 
     console.log('DB connected succesfully')
