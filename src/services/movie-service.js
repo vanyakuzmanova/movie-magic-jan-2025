@@ -3,8 +3,8 @@ import movies from '../movies.js';
 import Movie from '../models/Movie.js'
 
 export default{
-    async getAll( filter = {}){
-        let result = await Movie.find();
+    getAll( filter = {}){
+        //let result =  Movie.find();
 
         // if(filter.search){
         //     result = result.filter(movie => movie.title.toLowerCase().includes(filter.search.toLowerCase()));
@@ -16,11 +16,11 @@ export default{
         //     result = result.filter(movie => movie.year == filter.year);
         // }
 
-        return result;
+        return Movie.find();
     },
-    findOne(movieId){
+    getOne(movieId){
         //TODO: if movie is missing
-        const result = movies.find(movie => movie.id === movieId);
+        const result = Movie.findById(movieId);
 
         return result;
     },
