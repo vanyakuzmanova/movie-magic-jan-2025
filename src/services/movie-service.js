@@ -1,4 +1,5 @@
-import movies from '../movies.js';
+//import movies from '../movies.js';
+
 import Movie from '../models/Movie.js'
 
 export default{
