@@ -4,7 +4,7 @@ const castSchema = new Schema({
     name: String,
     age: Number,
     born: String,
-    iamgeUrl: String,
+    imageUrl: String,
 
 });
 
