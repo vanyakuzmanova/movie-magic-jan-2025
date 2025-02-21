@@ -1,6 +1,7 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
 import mongoose from 'mongoose';
+import 'dotenv/config';
 
 import routes from './routes.js';
 import showRatingHelper from './helpers/rating-helper.js';
@@ -29,13 +30,13 @@ app.use(express.urlencoded({extended: false})); //Learn express to parse data
 
 //db configuration
 try{
-    const uri = 'mongodb://localhost:27017/magic-movies-jan2025'
-    await mongoose.connect(uri);
+    const defaultUri = 'mongodb://localhost:27017/magic-movies-jan2025'
+    await mongoose.connect(process.env.DATABASE_URI ?? defaultUri);
 
     console.log('DB connected succesfully')
 }catch (err){
-    console.log('cannot connected to Db')
-    console.err(err.message)
+    console.log('cannot connected to Db');
+    console.err(err.message);
 }
 
 
