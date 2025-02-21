@@ -30,7 +30,7 @@ app.use(express.urlencoded({extended: false})); //Learn express to parse data
 
 //db configuration
 try{
-    const defaultUri = 'mongodb://localhost:27017/magic-movies-jan2025'
+    const defaultUri = 'mongodb://localhost:27017/magic-movies-jan2025';
     await mongoose.connect(process.env.DATABASE_URI ?? defaultUri);
 
     console.log('DB connected succesfully')
