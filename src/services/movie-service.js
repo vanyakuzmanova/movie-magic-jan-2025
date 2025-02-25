@@ -50,5 +50,8 @@ export default{
 
         //second way
         return Movie.findByIdAndUpdate(movieId, { $push: {casts: castId} } );
+    },
+    delete(movieId){
+        return Movie.findByIdAndDelete(movieId);
     }
 }
