@@ -2,9 +2,27 @@ import { Schema, model } from "mongoose";
 import bcrypt from 'bcrypt';
 
 const userSchema = new Schema({
-    email: String,
-    password: String,
+    email: {
+        type: String,
+        unique: true, //this is not validator it's index
+        lowercase: true, //sanitizer
+        match: /\@[a-zA-Z]+.[a-zA-Z]+$/,
+        minLength: 10,
+    },
+    password: {
+        type: String,
+        match: /^\w+$/,
+        minLength: 6,
+        trim: true, //sanitizer
+    },
 });
+
+userSchema.virtual('rePassword')
+    .set(function(rePassword){
+        if(rePassword !== this.password){
+            throw new Error('Password mismatch')
+        }
+    });
 
 userSchema.pre('save', async function (){
     this.password = await bcrypt.hash(this.password, 10);

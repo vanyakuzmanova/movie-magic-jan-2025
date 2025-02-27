@@ -1,5 +1,6 @@
 import { Router } from "express";
 import authService from "../services/auth-service.js";
+import { isAuth } from '../middlewares/auth-middleware.js';
 
 const authController = Router();
 
