@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 const userSchema = new Schema({
     email: {
         type: String,
+        required: true,
         unique: true, //this is not validator it's index
         lowercase: true, //sanitizer
         match: /\@[a-zA-Z]+.[a-zA-Z]+$/,
@@ -12,7 +13,7 @@ const userSchema = new Schema({
     password: {
         type: String,
         match: /^\w+$/,
-        minLength: 6,
+        minLength: [6, 'Password should be at least 6 characters!'],
         trim: true, //sanitizer
     },
 });
